@@ -1,0 +1,23 @@
+<% if signed_in? %>
+
+	<h3>Here are your upcoming nags:</h3>
+	<%= link_to "Sign Out", destroy_user_session_path, method: "delete"%>
+
+	<% if @reminders.any? %>
+		<h3>Reminders: (<%= @reminders.count %>)</h3>
+		<%= render @reminders %>
+		<%= will_paginate @reminders %>
+	<% end %>
+
+	<h3>Add a reminder:</h3>
+	<%= render 'shared/reminder_form' %>
+
+<% else %>
+
+	<div class="center hero-uint">
+	  <h1>NAG <br><small>Don't forget to send a card.</small></h1>
+	  <%= link_to "Get Started", new_user_registration_path, class: "btn btn-large btn-primary" %>
+	  <p><br>Already have an account? <%= link_to "Sign in", new_user_session_path %></p>
+	</div>
+
+<% end %>

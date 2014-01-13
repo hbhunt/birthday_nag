@@ -1,0 +1,5 @@
+<li>
+	<span class="content"><%= reminder.name %></span>
+	<span class="content"><%= reminder.event_date %></span>
+	<span class="content"><%= distance_of_time_in_words(Time.now, reminder.event_date) %></span>
+</li>

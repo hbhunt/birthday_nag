@@ -1,0 +1,5 @@
+<%= simple_form_for(@reminder) do |f| %>
+	<%= f.input :name, placeholder: "Who for?" %>
+	<%= f.input :event_date, as: :date, discard_year: true %>
+	<%= f.button :submit %>
+<% end %>
