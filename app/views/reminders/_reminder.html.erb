@@ -2,4 +2,9 @@
 	<span class="content"><%= reminder.name %></span>
 	<span class="content"><%= reminder.event_date %></span>
 	<span class="content"><%= distance_of_time_in_words(Time.now, reminder.event_date) %></span>
+	<% if current_user == reminder.user %>
+		<%= link_to "delete", reminder, 	method: :delete,
+											data: { confirm: "You sure?"},
+											title: reminder.name %>
+	<% end %>
 </li>
