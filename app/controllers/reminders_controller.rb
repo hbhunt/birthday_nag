@@ -18,7 +18,7 @@ class RemindersController < ApplicationController
 		redirect_to root_url
 	end
 
-	# private
+	private
 
 		def reminder_params
 			params.require(:reminder).permit(:name, :event_date)

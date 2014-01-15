@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey <%= @user.email %>!</h1>
+    <p>Here are your reminders:</p>
+    <% if @reminders.any? %>
+		<h3>Reminders: (<%= @reminders.count %>)</h3>
+	<% end %>
+  </body>
+</html>
