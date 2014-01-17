@@ -1,16 +1,30 @@
 <% if signed_in? %>
 
-	<h3>Here are your upcoming nags:</h3>
-	<%= link_to "Sign Out", destroy_user_session_path, method: "delete"%>
+	<nav class="top-nav">
+		<%= link_to "Sign Out", destroy_user_session_path, method: "delete"%>
+	</nav>
 
-	<% if @reminders.any? %>
-		<h3>Reminders: (<%= @reminders.count %>)</h3>
-		<%= render @reminders %>
-		<%= will_paginate @reminders %>
-	<% end %>
+	<section class="reminders">
+		<h3>Upcoming Nags</h3>
+		<% if @reminders.any? %>
+			<h5>Reminders: (<%= @reminders.count %>)</h5>
+			<%= render @reminders %>
+			<%= will_paginate @reminders %>
+		<% end %>
+	</section>
 
-	<h3>Add a reminder:</h3>
-	<%= render 'shared/reminder_form' %>
+	<div class="reminder-form">
+		<h3>Add a reminder</h3>
+		<%= render 'shared/reminder_form' %>
+	</div>
+
+	<div class="reminders">
+		<h3>Future</h3>
+		<% if @future_reminders %>
+			<h5>Reminders: (<%= @future_reminders.count %>)</h5>
+			<%= render @future_reminders %>
+		<% end %>
+	</div>
 
 <% else %>
 

@@ -9,10 +9,10 @@
 <body>
 
 <% if notice %>
-	<p class="alert alert-notice"><%= notice %></p>
+	<div class="success"><%= notice %></div>
 <% end %>
 <% if alert %>
-	<p class="alert alert-error"><%= alert %></p>
+	<div class="error"><%= alert %></div>
 <% end %>
 
 <%= yield %>
