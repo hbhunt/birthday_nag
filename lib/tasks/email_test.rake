@@ -14,8 +14,8 @@ task :send_all => :environment do |acc|
     # Based on the account, it's also a good idea to establish any other variables that might be used multiple
     # times by your mailers so you're not establishing them multiple times below.
 
-    # send a 
+    # send a digest email
     DailyDigest.send_reminder_email(account).deliver
-    print "Reminder email set"
+    print "Reminder email set\n"
 
 end
