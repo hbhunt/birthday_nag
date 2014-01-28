@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
 
   def future_reminders
 	@future_reminders = reminders.select { |reminder| 
-		if reminder.event_date
-			reminder.event_date >= Date.today 
+		if reminder.event_date 
+			reminder.event_date >= Date.today
 		end
 	}
   end

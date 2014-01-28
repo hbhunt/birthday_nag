@@ -14,6 +14,7 @@ body {
 .reminders,
 .reminder-form {
 	@include span-columns(4);
+	
 }
 
 .top-nav {

@@ -11,19 +11,23 @@
 			<%= render @reminders %>
 			<%= will_paginate @reminders %>
 		<% end %>
-	</section>
 
-	<div class="reminder-form">
-		<h3>Add a reminder</h3>
-		<%= render 'shared/reminder_form' %>
-	</div>
-
-	<div class="reminders">
 		<h3>Future</h3>
 		<% if @future_reminders %>
 			<h5>Reminders: (<%= @future_reminders.count %>)</h5>
 			<%= render @future_reminders %>
 		<% end %>
+
+		<h3>Past</h3>
+		<% if @past_reminders %>
+			<h5>Reminders: (<%= @past_reminders.count %>)</h5>
+			<%= render @past_reminders %>
+		<% end %>
+	</section>
+
+	<div class="reminder-form">
+		<h3>Add a reminder</h3>
+		<%= render 'shared/reminder_form' %>
 	</div>
 
 <% else %>
