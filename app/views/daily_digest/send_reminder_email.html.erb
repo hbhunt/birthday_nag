@@ -7,7 +7,22 @@
     <h1>Hey <%= @user.email %>!</h1>
     <p>Here are your reminders:</p>
     <% if @reminders.any? %>
-		<h3>Reminders: (<%= @reminders.count %>)</h3>
-	<% end %>
+      <h3>Reminders: (<%= @reminders.count %>)</h3>
+      <ul>
+      <% @reminders.each do |reminder| %>
+        <li>
+          <span class="content"><%= reminder.name %></span>
+          <span class="content"><%= reminder.event_date %></span>
+          <span class="content">
+            <%= if reminder.event_date && reminder.event_date > Time.now
+              distance_of_time_in_words(Time.now, reminder.event_date)
+              else
+              end 
+            %>
+          </span>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
   </body>
 </html>

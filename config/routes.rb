@@ -1,9 +1,11 @@
 BirthdayNag::Application.routes.draw do
 
-  devise_for :users
+  # devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :reminders, only: [:create, :destroy]
 
   root 'static_pages#home'
+  match '/welcome', to: 'static_pages#welcome', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

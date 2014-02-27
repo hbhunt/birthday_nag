@@ -14,7 +14,7 @@ describe 'Authentication' do
 		let(:user) { FactoryGirl.create(:user) }
 		before { sign_in user }
 
-		it { should have_content("Add a reminder") }
+		it { should have_content("Upcoming Nags") }
 	end # with valid information
 
 end # describe Authentication

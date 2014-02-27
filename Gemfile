@@ -38,6 +38,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -3,7 +3,7 @@ class DailyDigest < ActionMailer::Base
 
   def send_reminder_email(user)
   	@user = user
-  	@reminders = @user.reminders
+  	@reminders = @user.future_reminders
   	mail( 	:to => @user.email,
   			:subject => "Shit is about to get real for you")
   end
